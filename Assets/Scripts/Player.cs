@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
 
     //tiro
     public GameObject pfLaser ;
-    public bool PodeTiroTriplo;
+    public bool podeTiroTriplo;
     public GameObject pfDisparoTriplo;
 
     //cooldown
@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) ){
 
-            if ( PodeTiroTriplo == false){    
+            if (podeTiroTriplo == false){    
                 if ( Time.time > podeDisparar ){
 
                 Instantiate( pfLaser, transform.position + new Vector3(0,1.1f,0), Quaternion.identity);
@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
             }
         }
 
-            if (PodeTiroTriplo == true){
+            if (podeTiroTriplo == true){
 
                 if ( Time.time > podeDisparar ){
 

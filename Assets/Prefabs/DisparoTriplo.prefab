@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5925f6d86e49db944aac90f91d0d4a3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocLaser: 12
+  velocLaser: 20
 --- !u!1 &8641304677562371082
 GameObject:
   m_ObjectHideFlags: 0

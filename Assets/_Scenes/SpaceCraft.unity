@@ -235,9 +235,11 @@ GameObject:
   - component: {fileID: 76391814}
   - component: {fileID: 76391813}
   - component: {fileID: 76391815}
+  - component: {fileID: 76391817}
+  - component: {fileID: 76391816}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -325,10 +327,57 @@ MonoBehaviour:
   entradaHorizontal: 0
   entradaVertical: 0
   pfLaser: {fileID: 500072678108942878, guid: 474d4d6b4e4c7164e8a9314ed243866f, type: 3}
-  PodeTiroTriplo: 0
+  podeTiroTriplo: 0
   pfDisparoTriplo: {fileID: 7204267091536681589, guid: 31374114b96cba0468f8892bfb98cf4c, type: 3}
   tempoDeDisparo: 0.3
   podeDisparar: 0
+--- !u!61 &76391816
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76391812}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.19, y: 4.12}
+    newSize: {x: 3.19, y: 4.12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.19, y: 4.12}
+  m_EdgeRadius: 0
+--- !u!50 &76391817
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76391812}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &632417078
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,8 +472,10 @@ GameObject:
   m_Component:
   - component: {fileID: 897743298}
   - component: {fileID: 897743297}
+  - component: {fileID: 897743300}
+  - component: {fileID: 897743299}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: PU_TiroTriplo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -468,8 +519,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -429200623
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fffeb8f0228afa44ab72f220153d8c51, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -490,13 +541,52 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897743296}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.45, y: 1.8, z: -0.069362}
-  m_LocalScale: {x: 0.24989909, y: 0.24989909, z: 0.24989909}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -3.7, y: 4.45, z: -0.069362}
+  m_LocalScale: {x: 0.24999999, y: 0.24999999, z: 0.24999999}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &897743299
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897743296}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.23, y: 4.18}
+    newSize: {x: 4.23, y: 4.18}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.23, y: 4.18}
+  m_EdgeRadius: 0
+--- !u!114 &897743300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897743296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a0af46b8ad076c43b1da6d868463221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _velocidade: 3.5
 --- !u!1 &1908092659
 GameObject:
   m_ObjectHideFlags: 0
