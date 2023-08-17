@@ -30,37 +30,11 @@ public class Player : MonoBehaviour
     {
         
         Movimento();
-        
-        
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) ){
 
-            if (podeTiroTriplo == false){    
-                if ( Time.time > podeDisparar ){
-
-                Instantiate( pfLaser, transform.position + new Vector3(0,1.1f,0), Quaternion.identity);
-
-                podeDisparar = Time.time + tempoDeDisparo ;
-
-            }
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+        {
+            Disparo();
         }
-
-            if (podeTiroTriplo == true){
-
-                if ( Time.time > podeDisparar ){
-
-                Instantiate ( pfDisparoTriplo, transform.position + new Vector3 (0,0,0), Quaternion.identity);
-
-                podeDisparar = Time.time + tempoDeDisparo;
-            }
-            
-        }
-            
-        } 
-
-        
-        
-      
-        
     }
 
     private void Movimento(){
@@ -88,9 +62,46 @@ public class Player : MonoBehaviour
             transform.position = new Vector3(transform.position.x,-3.95f,0);
         }
 
+    }
+
+    void Disparo()
+    {
+        if (podeTiroTriplo == false)
+        {
+            if (Time.time > podeDisparar)
+            {
+
+                Instantiate(pfLaser, transform.position + new Vector3(0, 1.1f, 0), Quaternion.identity);
+
+                podeDisparar = Time.time + tempoDeDisparo;
+
+            }
+        }
+
+        if (podeTiroTriplo == true)
+        {
+
+            if (Time.time > podeDisparar)
+            {
+
+                Instantiate(pfDisparoTriplo, transform.position + new Vector3(0, 0, 0), Quaternion.identity);
+
+                podeDisparar = Time.time + tempoDeDisparo;
+            }
+
+        }
 
     }
 
-        
+    public IEnumerator DisparoTriploRotina()
+    {
+        yield return new WaitForSeconds(7.0f);
+        podeTiroTriplo = false;
+    }
 
+    public void LigarPUDIsparoTriplo()
+    {
+        podeTiroTriplo = true;
+        StartCoroutine(DisparoTriploRotina());
+    }
 }

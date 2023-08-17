@@ -25,6 +25,7 @@ public class PUp : MonoBehaviour
         Player player = other.GetComponent<Player>();
 
         player.podeTiroTriplo = true;
+        player.LigarPUDIsparoTriplo();
 
         Destroy(this.gameObject);
     }
