@@ -9,6 +9,8 @@ public class Inimigo : MonoBehaviour
     [SerializeField]
     private float velocidadeInimigo = 5;
 
+    [SerializeField] private GameObject _explosaoDoInimigo;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,18 @@ public class Inimigo : MonoBehaviour
         if (transform.position.y < -6.1f)
         {
             transform.position = new Vector3(Random.Range(-7, 7), 6.1f, transform.position.z);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Lazer")
+        {
+
+            Instantiate(_explosaoDoInimigo, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+            
+            
         }
     }
 }

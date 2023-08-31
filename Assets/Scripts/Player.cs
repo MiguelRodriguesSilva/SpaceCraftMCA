@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
     public float tempoDeDisparo = 0.3f ;
     public float podeDisparar = 0.0f;
     // Start is called before the first frame update
+
+    [SerializeField] Animator animador;
     void Start()
     {
         Debug.Log("Start de "+this.name);
@@ -103,5 +105,18 @@ public class Player : MonoBehaviour
     {
         podeTiroTriplo = true;
         StartCoroutine(DisparoTriploRotina());
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Inimigo")
+        {
+            Morte();
+        }
+    }
+
+    void Morte()
+    {
+        animador.SetBool("estaVivo", false);
     }
 }
